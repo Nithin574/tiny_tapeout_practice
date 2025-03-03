@@ -22,7 +22,7 @@ module tt_um_Nithin574 (
         if(!rst_n)
             uo_out_temp <= 8'd0;
         else
-            uo_out_temp  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+            uo_out_temp  <= ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
     end
   assign uo_out = uo_out_temp;
 
