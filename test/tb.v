@@ -52,7 +52,7 @@ module tb ();
       clk = 1'b0;
       rst_n = 1'b0;
 
-      #2 rst_n ;
+      #2 rst_n = 1'b0 ;
          ui_in = 1;
          uio_in = 1;
       #20 $finish;
