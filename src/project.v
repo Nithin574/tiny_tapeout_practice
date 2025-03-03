@@ -15,14 +15,14 @@ module tt_um_Nithin574 (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-/*
+
   // All output pins must be assigned. If not used, assign to 0.
     reg [7:0] uo_out_temp;
     always@(posedge clk) begin
         if(!rst_n)
             uo_out_temp <= 8'd0;
         else
-            uo_out_temp  <= ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+            uo_out_temp  <= ui_in[6:0] + uio_in[6:0];  // Example: ou_out is the sum of ui_in and uio_in
     end
   assign uo_out = uo_out_temp;
 
@@ -32,7 +32,7 @@ module tt_um_Nithin574 (
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, 1'b0};
-*/
+/*
 
      // All output pins must be assigned. If not used, assign to 0.
   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
@@ -41,5 +41,5 @@ module tt_um_Nithin574 (
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
-  
+ */ 
 endmodule
