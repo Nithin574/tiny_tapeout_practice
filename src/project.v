@@ -26,13 +26,13 @@ module tt_um_Nithin574 (
     end
   assign uo_out = uo_out_temp;
 
-    assign ui_in[7] = 1'b0;
-    assign uio_in[7] = 1'b0;      
+    //assign ui_in[7] = 1'b0;
+    //assign uio_in[7] = 1'b0;      
   assign uio_out = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, 1'b0};
+    wire _unused = &{ena,ui_in[7],uio_in[7], 1'b0};
 /*
 
      // All output pins must be assigned. If not used, assign to 0.
