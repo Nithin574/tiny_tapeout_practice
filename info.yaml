@@ -1,56 +1,53 @@
 # Tiny Tapeout project information
 project:
-  title:        "Sequential Adder"      # Project title
-  author:       "Nithin S"      # Your name
-  discord:      "ggg"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "The design is going to add the two 8 bit inputs"      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     50       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "Sequential Adder"  # Project title
+  author:       "Your Name"         # Your name
+  discord:      "ggg"               # Your Discord username
+  description:  "Adds two 8-bit inputs sequentially"  # Short project description
+  language:     "Verilog"           # Language (Verilog)
+  clock_hz:     50_000_000          # Clock frequency in Hz (50 MHz)
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  # Tile size estimation (Update based on OpenLane area results)
+  tiles: "1x1"  # Valid values: 1x1, 1x2, 2x2, 3x2, etc.
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  # Top module (Must start with "tt_um_")
   top_module:  "tt_um_Nithin574"
 
-  # List your project's source files here.
-  # Source files must be in ./src and you must list each source file separately, one per line.
-  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  # List of Verilog source files (located in ./src/)
   source_files:
     - "project.v"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+# Pin assignments for documentation (must match Verilog signals)
 pinout:
-  # Inputs
-  ui[0]: "in"
-  ui[1]: "in"
-  ui[2]: "in"
-  ui[3]: "in"
-  ui[4]: "in"
-  ui[5]: "in"
-  ui[6]: "in"
-  ui[7]: "in"
+  # Inputs (ui_in[7:0])
+  ui[0]: "A0"
+  ui[1]: "A1"
+  ui[2]: "A2"
+  ui[3]: "A3"
+  ui[4]: "A4"
+  ui[5]: "A5"
+  ui[6]: "A6"
+  ui[7]: "A7"
 
-  # Outputs
-  uo[0]: "out"
-  uo[1]: "out"
-  uo[2]: "out"
-  uo[3]: "out"
-  uo[4]: "out"
-  uo[5]: "out"
-  uo[6]: "out"
-  uo[7]: "out"
+  # Outputs (uo_out[7:0])
+  uo[0]: "SUM0"
+  uo[1]: "SUM1"
+  uo[2]: "SUM2"
+  uo[3]: "SUM3"
+  uo[4]: "SUM4"
+  uo[5]: "SUM5"
+  uo[6]: "SUM6"
+  uo[7]: "SUM7"
 
-  # Bidirectional pins
-  uio[0]: "in"
-  uio[1]: "in"
-  uio[2]: "in"
-  uio[3]: "in"
-  uio[4]: "in"
-  uio[5]: "in"
-  uio[6]: "in"
-  uio[7]: "in"
+  # Bidirectional pins (uio_in[7:0])
+  uio[0]: "B0"
+  uio[1]: "B1"
+  uio[2]: "B2"
+  uio[3]: "B3"
+  uio[4]: "B4"
+  uio[5]: "B5"
+  uio[6]: "B6"
+  uio[7]: "B7"
 
 # Do not change!
 yaml_version: 6
