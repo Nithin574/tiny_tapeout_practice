@@ -26,7 +26,8 @@ module tt_um_Nithin574 (
     end
   assign uo_out = uo_out_temp;
 
-    
+  assign ui_in[7:6] = 2'b00;
+  assign uio_in[7:6] = 2'b00;      
   assign uio_out = 0;
   assign uio_oe  = 0;
 
