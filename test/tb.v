@@ -1,5 +1,5 @@
 `default_nettype none
-`timescale 1ns / 1ps
+`timescale 10ns / 10ps
 
 /* This testbench just instantiates the module and makes some convenient wires
    that can be driven / tested by the cocotb test.py.
@@ -46,4 +46,15 @@ module tb ();
       .rst_n  (rst_n)     // not reset
   );
 
+   always @ #1 clk = ~clk;
+
+   initial begin
+      clk = 1'b0;
+      rst_n = 1'b0;
+
+      #2 rst_n ;
+         ui_in = 1;
+         uio_in = 1;
+      #20 $finish;
+   end
 endmodule
