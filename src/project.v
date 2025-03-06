@@ -21,12 +21,13 @@ module tt_um_Nithin574 (
     reg clk_25Mhz;
     
     always@(posedge clk) begin
-        if(!rst_n)
+        if(!rst_n)begin
             uo_out_temp <= 8'd0;
             clk_25Mhz <= 1'b0;
-        else
+            end else begin
             uo_out_temp  <= ui_in[5:0] + uio_in[5:0];  // Example: ou_out is the sum of ui_in and uio_in
             clk_25Mhz <= clk_25Mhz + 1'b1;
+            end
     end
     assign uo_out[6:0] = uo_out_temp;
     always@(posedge clk_25Mhz)
