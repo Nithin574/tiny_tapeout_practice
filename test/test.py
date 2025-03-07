@@ -22,7 +22,7 @@ async def test_project(dut):
     dut.rst_n.value = 0
     await ClockCycles(dut.clk, 2)
     dut.rst_n.value = 1
-
+'''
     dut._log.info("Test project behavior")
 
     # Set the input values you want to test
@@ -38,6 +38,12 @@ async def test_project(dut):
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
+'''
+    dut.ui_in.value = 20
+    dut.uio_in.value = 30
+    await ClockCycles(dut.clk, 4)  # Wait for 2 clock cycles
+    dut._log.info(f"Test Case 1: Expected 50, Got {int(dut.uo_out.value)}")
+    assert dut.uo_out.value == 50, f"Test Case 1 Failed: Expected 5, Got {int(dut.uo_out.value)}"
     '''
 import cocotb
 from cocotb.clock import Clock
