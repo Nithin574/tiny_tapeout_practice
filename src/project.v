@@ -32,7 +32,7 @@ module tt_um_Nithin574 (
     assign {uio_out[0],uo_out[7:0]} = uo_out_temp;
     always@(posedge clk_25Mhz, negedge rst_n)begin
         if(!rst_n)begin
-              uo_out_temp <= 8'd0;
+              uo_out_temp <= 9'd0;
             //clk_25Mhz <= 1'b0;
             end else begin
                 uo_out_temp  <= ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
