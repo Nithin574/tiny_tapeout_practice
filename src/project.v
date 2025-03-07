@@ -29,7 +29,7 @@ module tt_um_Nithin574 (
             clk_25Mhz <= clk_25Mhz + 1'b1;
             end
     end
-    assign {uio_out[0],uo_out[7:0]} = uo_out_temp;
+
     always@(posedge clk_25Mhz, negedge rst_n)begin
         if(!rst_n)begin
               uo_out_temp <= 8'd0;
@@ -39,22 +39,14 @@ module tt_um_Nithin574 (
             //clk_25Mhz <= clk_25Mhz + 1'b1;
             end
     end
+   
+    assign uo_out[7:0] = uo_out_temp;
     
-    //assign ui_in[7] = 1'b0;
-    //assign uio_in[7] = 1'b0;      
+    
     assign uio_out = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
     wire _unused = &{ena,ui_in[7],uio_in[7], 1'b0};
-/*
 
-     // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
-
-  // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
- */ 
 endmodule
