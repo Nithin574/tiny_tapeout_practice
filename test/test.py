@@ -29,6 +29,6 @@ async def test_project(dut):
     for i in range(5):
         dut.ui_in.value = i * 5
         dut.uio_in.value = i * 3
-        await ClockCycles(dut.clk, 1)
+        await ClockCycles(dut.clk, 4)
         expected_output = (i * 5) + (i * 3)  # Adjust based on module functionality
         assert dut.uo_out.value == expected_output, f"Expected {expected_output}, got {int(dut.uo_out.value)}"
